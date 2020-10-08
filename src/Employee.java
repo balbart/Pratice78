@@ -1,23 +1,16 @@
-interface EmployeePosition{
-    String getJobTitle();
-    double calcSalary(double baseSalary);
-}
-
-
-public class Employee implements EmployeePosition {
-    private String  name;
-    private String surname;
-    private double baseSalary;
-    private String position;
-
-    @Override
-    public String getJobTitle() {
-        return null;
+public class Employee{
+    public double totalSalary;
+    public double fixedSalary;
+    public String surname, name;
+    public EmployeePosition employeePosition;
+    Employee(double fixedSalary ,EmployeePosition employeePosition){
+        this.employeePosition = employeePosition;
+        this.fixedSalary = fixedSalary;
+        this.totalSalary = employeePosition.calcSalary(fixedSalary);
     }
 
     @Override
-    public double calcSalary(double baseSalary) {
-        return 0;
+    public String toString() {
+        return "Post: " + employeePosition.getJobTitle() + " salary: " + this.totalSalary;
     }
 }
-

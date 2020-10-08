@@ -1,13 +1,17 @@
 public class Operator implements EmployeePosition{
-    String position;
+    double income;
+    Operator(double income){
+        this.income = income;
+    }
+
 
     @Override
     public String getJobTitle() {
-        return null;
+        return "Operator";
     }
 
     @Override
-    public double calcSalary(double baseSalary) {
-        return 0;
+    public double calcSalary(double fixedSalary) {
+        return fixedSalary;
     }
 }
